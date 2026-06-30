@@ -402,18 +402,18 @@ export default function Home() {
                Apakah Anda memiliki peluang kolaborasi, proyek menarik, atau sekadar ingin berdiskusi? Jangan ragu untuk menghubungi saya melalui platform di bawah ini.
              </p>
              
-             <div className="flex flex-wrap justify-center gap-4">
-                <a href="https://www.linkedin.com/in/wikauts" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-blue-600/30">
-                  <LinkedinIcon size={22} /> LinkedIn
+             <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-3 md:gap-4 w-full max-w-[340px] md:max-w-none mx-auto">
+                <a href="https://www.linkedin.com/in/wikauts" target="_blank" rel="noopener noreferrer" className="col-span-2 md:col-span-1 w-full md:w-auto justify-center flex items-center gap-2 md:gap-3 px-4 md:px-8 py-3.5 md:py-4 rounded-xl md:rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-blue-600/30 text-sm md:text-base">
+                  <LinkedinIcon className="w-5 h-5 md:w-[22px] md:h-[22px]" /> LinkedIn
                 </a>
-                <a href="https://github.com/DwiKautsar" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-slate-900/30">
-                  <GithubIcon size={22} /> GitHub
+                <a href="https://github.com/DwiKautsar" target="_blank" rel="noopener noreferrer" className="col-span-1 md:col-span-1 w-full md:w-auto justify-center flex items-center gap-2 md:gap-3 px-2 md:px-8 py-3.5 md:py-4 rounded-xl md:rounded-2xl bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-slate-900/30 text-sm md:text-base">
+                  <GithubIcon className="w-5 h-5 md:w-[22px] md:h-[22px]" /> GitHub
                 </a>
-                <a href="mailto:raysahdwi12@gmail.com" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-red-500 hover:bg-red-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-red-500/30">
-                  <Mail size={22} /> Gmail
+                <a href="mailto:raysahdwi12@gmail.com" className="col-span-1 md:col-span-1 w-full md:w-auto justify-center flex items-center gap-2 md:gap-3 px-2 md:px-8 py-3.5 md:py-4 rounded-xl md:rounded-2xl bg-red-500 hover:bg-red-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-red-500/30 text-sm md:text-base">
+                  <Mail className="w-5 h-5 md:w-[22px] md:h-[22px]" /> Gmail
                 </a>
-                <a href="https://wa.me/6285156468331" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-green-500/30">
-                  <MessageCircle size={22} /> WhatsApp
+                <a href="https://wa.me/6285156468331" target="_blank" rel="noopener noreferrer" className="col-span-2 md:col-span-1 w-full md:w-auto justify-center flex items-center gap-2 md:gap-3 px-4 md:px-8 py-3.5 md:py-4 rounded-xl md:rounded-2xl bg-green-500 hover:bg-green-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-green-500/30 text-sm md:text-base">
+                  <MessageCircle className="w-5 h-5 md:w-[22px] md:h-[22px]" /> WhatsApp
                 </a>
              </div>
            </div>
