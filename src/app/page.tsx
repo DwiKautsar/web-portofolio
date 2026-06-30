@@ -55,12 +55,15 @@ export default function Home() {
 
   const skillsRow1 = [
     "Critical Thinking", "Analytical Skills", "Journalism", "Public Speaking",
-    "Data Structures", "Algorithms", "C++", "Java", "Python"
+    "Data Structures", "Algorithms"
   ];
   
   const skillsRow2 = [
-    "Penetration Testing", "VAPT", "Red Team", "XSS", "SQL Injection",
-    "UI/UX Design", "Figma", "HTML5", "CSS", "JavaScript"
+    "C++", "Java", "Python", "Penetration Testing", "VAPT", "Red Team", "XSS"
+  ];
+
+  const skillsRow3 = [
+    "SQL Injection", "UI/UX Design", "Figma", "HTML5", "CSS", "JavaScript"
   ];
 
   return (
@@ -268,7 +271,7 @@ export default function Home() {
       >
         <motion.h2 variants={fadeUpVariants} className="text-3xl font-bold mb-8 flex items-center gap-3">
           <span className="p-2 rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/50 dark:text-blue-400"><Award size={24} /></span>
-          Licenses & Certifications
+          Certifications
         </motion.h2>
         <style jsx>{`
           @keyframes marquee {
@@ -322,8 +325,8 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             
             {/* Row 1 - Moving Left */}
-            <div className="flex w-[200%] animate-marquee-left">
-              {[...skillsRow1, ...skillsRow1].map((skill, i) => (
+            <div className="flex w-[200%] md:w-max animate-marquee-left">
+              {[...skillsRow1, ...skillsRow1, ...skillsRow1].map((skill, i) => (
                 <div key={i} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
@@ -331,8 +334,17 @@ export default function Home() {
             </div>
 
             {/* Row 2 - Moving Right */}
-            <div className="flex w-[200%] animate-marquee-right">
-              {[...skillsRow2, ...skillsRow2].map((skill, i) => (
+            <div className="flex w-[200%] md:w-max animate-marquee-right">
+              {[...skillsRow2, ...skillsRow2, ...skillsRow2].map((skill, i) => (
+                <div key={i} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                  {skill}
+                </div>
+              ))}
+            </div>
+
+            {/* Row 3 - Moving Left */}
+            <div className="flex w-[200%] md:w-max animate-marquee-left">
+              {[...skillsRow3, ...skillsRow3, ...skillsRow3].map((skill, i) => (
                 <div key={i} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
@@ -372,7 +384,7 @@ export default function Home() {
                 <a href="mailto:raysahdwi12@gmail.com" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-red-500 hover:bg-red-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-red-500/30">
                   <Mail size={22} /> Gmail
                 </a>
-                <a href="https://wa.me/62851568331" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-green-500/30">
+                <a href="https://wa.me/6285156468331" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-4 rounded-2xl bg-green-500 hover:bg-green-600 text-white font-medium transition-all hover:-translate-y-1.5 shadow-lg shadow-green-500/30">
                   <MessageCircle size={22} /> WhatsApp
                 </a>
              </div>
