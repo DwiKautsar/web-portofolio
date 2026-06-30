@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Light Mode - Blue Ocean/Sky Theme */
+  --bg-base: #f0f8ff;
+  --bg-gradient-1: #e0f2fe;
+  --bg-gradient-2: #bfdbfe;
+  
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-heading: #020617;
+  
+  --brand-color: #3b82f6;
+  
+  /* Glass Variables Light (Stronger) */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-bg-hover: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
+  --glass-edge-top: linear-gradient(90deg, transparent, rgba(255,255,255,1), transparent);
+  --glass-edge-left: linear-gradient(180deg, rgba(255,255,255,1), transparent, rgba(255,255,255,0.4));
+}
+
+.dark {
+  /* Dark Mode - Deep Night/Ocean Theme */
+  --bg-base: #020617;
+  --bg-gradient-1: #0f172a;
+  --bg-gradient-2: #1e3a8a;
+  
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --text-heading: #f8fafc;
+  
+  --brand-color: #60a5fa;
+  
+  /* Glass Variables Dark */
+  --glass-bg: rgba(15, 23, 42, 0.45);
+  --glass-bg-hover: rgba(30, 58, 138, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  --glass-edge-top: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  --glass-edge-left: linear-gradient(180deg, rgba(255,255,255,0.3), transparent, rgba(255,255,255,0.05));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Base Global Background Layer for Depth */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 15% 50%, var(--bg-gradient-2), transparent 40%),
+    radial-gradient(circle at 85% 30%, var(--bg-gradient-1), transparent 50%);
+  filter: blur(100px);
+  opacity: 0.6;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.dark .bg-blobs {
+  opacity: 0.4;
+  background: 
+    radial-gradient(circle at 15% 50%, var(--bg-gradient-2), transparent 40%),
+    radial-gradient(circle at 85% 30%, var(--bg-gradient-1), transparent 50%);
+}
+
+/* Glass Panel Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px) !important;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 1px;
+  background: var(--glass-edge-top);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glass-panel::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 1px; bottom: 0;
+  background: var(--glass-edge-left);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.glass-panel-hoverable:hover {
+  background: var(--glass-bg-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(30, 58, 138, 0.25);
+}
+
+.dark .glass-panel-hoverable:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--brand-color);
+  border-radius: 10px;
+  opacity: 0.5;
+}
+
+/* Marquee Animation */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+
+.skills-container:hover .animate-marquee-left,
+.skills-container:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
