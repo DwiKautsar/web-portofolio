@@ -53,16 +53,26 @@ export default function Home() {
     { name: "CYBER MEETUP #10: Transfer Knowledge Cyber Security", issuer: "PT. Yukmari Project Indonesia", date: "Agu 2025", color: "text-emerald-500", bg: "bg-emerald-50 dark:bg-emerald-500/10", image: "/certificates/yukmariproject.png" }
   ];
 
-  const skillsRow1 = [
+  // Desktop Skills (2 Rows)
+  const desktopRow1 = [
+    "Critical Thinking", "Analytical Skills", "Journalism", "Public Speaking",
+    "Data Structures", "Algorithms", "C++", "Java", "Python"
+  ];
+  
+  const desktopRow2 = [
+    "Penetration Testing", "VAPT", "Red Team", "XSS", "SQL Injection",
+    "UI/UX Design", "Figma", "HTML5", "CSS", "JavaScript"
+  ];
+
+  // Mobile Skills (3 Rows)
+  const mobileRow1 = [
     "Critical Thinking", "Analytical Skills", "Journalism", "Public Speaking",
     "Data Structures", "Algorithms"
   ];
-  
-  const skillsRow2 = [
+  const mobileRow2 = [
     "C++", "Java", "Python", "Penetration Testing", "VAPT", "Red Team", "XSS"
   ];
-
-  const skillsRow3 = [
+  const mobileRow3 = [
     "SQL Injection", "UI/UX Design", "Figma", "HTML5", "CSS", "JavaScript"
   ];
 
@@ -322,30 +332,49 @@ export default function Home() {
           <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[var(--bg-base)] to-transparent z-10 pointer-events-none opacity-80"></div>
           <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[var(--bg-base)] to-transparent z-10 pointer-events-none opacity-80"></div>
 
-          <div className="flex flex-col gap-6">
+          {/* Desktop View (2 Rows) */}
+          <div className="hidden md:flex flex-col gap-6">
+            <div className="flex w-max animate-marquee-left">
+              {[...desktopRow1, ...desktopRow1].map((skill, i) => (
+                <div key={`d1-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                  {skill}
+                </div>
+              ))}
+            </div>
+            <div className="flex w-max animate-marquee-right">
+              {[...desktopRow2, ...desktopRow2].map((skill, i) => (
+                <div key={`d2-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                  {skill}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile View (3 Rows) */}
+          <div className="flex md:hidden flex-col gap-6">
             
             {/* Row 1 - Moving Left */}
-            <div className="flex w-[200%] md:w-max animate-marquee-left">
-              {[...skillsRow1, ...skillsRow1, ...skillsRow1].map((skill, i) => (
-                <div key={i} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+            <div className="flex w-[200%] animate-marquee-left">
+              {[...mobileRow1, ...mobileRow1, ...mobileRow1].map((skill, i) => (
+                <div key={`m1-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
             </div>
 
             {/* Row 2 - Moving Right */}
-            <div className="flex w-[200%] md:w-max animate-marquee-right">
-              {[...skillsRow2, ...skillsRow2, ...skillsRow2].map((skill, i) => (
-                <div key={i} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+            <div className="flex w-[200%] animate-marquee-right">
+              {[...mobileRow2, ...mobileRow2, ...mobileRow2].map((skill, i) => (
+                <div key={`m2-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
             </div>
 
             {/* Row 3 - Moving Left */}
-            <div className="flex w-[200%] md:w-max animate-marquee-left">
-              {[...skillsRow3, ...skillsRow3, ...skillsRow3].map((skill, i) => (
-                <div key={i} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+            <div className="flex w-[200%] animate-marquee-left">
+              {[...mobileRow3, ...mobileRow3, ...mobileRow3].map((skill, i) => (
+                <div key={`m3-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
