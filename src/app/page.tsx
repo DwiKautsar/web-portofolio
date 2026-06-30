@@ -135,10 +135,7 @@ export default function Home() {
             animate={{ y: [0, -8, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           >
-            <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-2">
-              <Code2 size={24} />
-            </div>
-            <p className="font-bold text-sm text-[var(--text-main)]">Software<br/>Engineer</p>
+            <Code2 className="text-blue-600 dark:text-cyan-400 w-6 h-6" />
           </motion.div>
 
           <motion.div 
