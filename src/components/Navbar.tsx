@@ -103,7 +103,16 @@ export function Navbar() {
         <div className="max-w-6xl mx-auto glass-panel px-6 py-3 flex items-center justify-between rounded-full">
           
           <div className="flex-1 flex justify-start items-center">
-            <Link href="/" className="relative w-12 h-12 overflow-hidden flex items-center justify-center rounded-full hover:scale-105 transition-transform">
+            <Link 
+              href="/" 
+              onClick={(e) => {
+                if (pathname === "/") {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }}
+              className="relative w-12 h-12 overflow-hidden flex items-center justify-center rounded-full hover:scale-105 transition-transform"
+            >
               <Image src="/logo.svg" alt="Logo" fill className="object-contain" />
             </Link>
           </div>
