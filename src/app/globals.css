@@ -5,6 +5,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   /* Light Mode - Blue Ocean/Sky Theme */
   --bg-base: #f0f8ff;
