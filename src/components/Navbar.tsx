@@ -13,6 +13,19 @@ export function Navbar() {
   const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("");
 
+  const handleMobileLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    setIsOpen(false);
+    document.body.style.overflow = "";
+    if (href.startsWith("/#") && pathname === "/") {
+      e.preventDefault();
+      const targetId = href.replace("/#", "");
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   const links = [
     { name: "About", href: "/#about", id: "about" },
     { name: "Experience", href: "/#experience", id: "experience" },
@@ -158,7 +171,7 @@ export function Navbar() {
           <div className="flex justify-end mb-8 relative z-10 flex-shrink-0">
             <button 
               onClick={() => setIsOpen(false)}
-              className="p-2 text-[var(--text-main)] hover:text-red-500 transition-colors bg-white/10 dark:bg-slate-800/50 rounded-full"
+              className="p-2 text-[var(--text-main)] hover:text-red-500 transition-colors bg-slate-200 dark:bg-slate-800/50 rounded-full"
             >
               <X size={24} />
             </button>
@@ -171,11 +184,11 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => handleMobileLinkClick(e, link.href)}
                   className={`text-lg font-semibold transition-all border-b pb-4 relative flex items-center ${
                     isActive 
                       ? "text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400" 
-                      : "text-[var(--text-main)] hover:text-blue-600 dark:hover:text-blue-400 border-white/10 dark:border-white/5"
+                      : "text-[var(--text-main)] hover:text-blue-600 dark:hover:text-blue-400 border-slate-200 dark:border-white/5"
                   }`}
                 >
                   {link.name}
@@ -187,7 +200,7 @@ export function Navbar() {
           <div className="mt-8 relative z-10 flex-shrink-0">
             <Link 
               href="/#contact" 
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleMobileLinkClick(e, "/#contact")}
               className="block text-center w-full px-5 py-3 text-base font-bold rounded-xl bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-md shadow-blue-500/30"
             >
               Contact Me

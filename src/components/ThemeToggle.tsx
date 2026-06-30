@@ -19,11 +19,11 @@ export function ThemeToggle() {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="w-12 h-12 rounded-full glass-panel glass-panel-hoverable flex items-center justify-center transition-all shadow-xl border border-white/30"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      className="w-12 h-12 rounded-full glass-panel glass-panel-hoverable flex items-center justify-center transition-all shadow-xl border border-slate-200 dark:border-white/30 bg-white/50 dark:bg-transparent"
       aria-label="Toggle Theme"
     >
-      {theme === "dark" ? <Sun className="w-6 h-6 text-yellow-400" /> : <Moon className="w-6 h-6 text-blue-600" />}
+      {resolvedTheme === "dark" ? <Sun className="w-6 h-6 text-yellow-400" /> : <Moon className="w-6 h-6 text-blue-600" />}
     </button>
   );
 }

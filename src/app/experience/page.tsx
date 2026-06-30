@@ -31,7 +31,7 @@ export default function ExperiencePage() {
         className="space-y-6"
       >
         <motion.div variants={fadeUpVariants}>
-          <Link href="/#experience" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 transition-colors font-medium text-sm backdrop-blur-md border border-white/20">
+          <Link href="/#experience" className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-200 hover:bg-slate-300 dark:bg-slate-800/50 dark:hover:bg-slate-700/50 transition-colors font-medium text-sm backdrop-blur-md border border-slate-300 dark:border-white/20">
             <ArrowLeft size={16} />
             Back to Home
           </Link>
@@ -111,7 +111,7 @@ export default function ExperiencePage() {
                </div>
              </div>
              
-             <div className="space-y-4 text-[var(--text-muted)] text-sm md:text-base relative before:absolute before:inset-0 before:ml-[5px] before:h-full before:w-[2px] before:bg-white/10 dark:before:bg-white/5">
+             <div className="space-y-4 text-[var(--text-muted)] text-sm md:text-base relative before:absolute before:inset-0 before:ml-[5px] before:h-full before:w-[2px] before:bg-slate-200 dark:before:bg-white/5">
                 {[
                   { role: "Head of Organizational Resource Development Dept.", date: "Jan 2026 - Present" },
                   { role: "Staff of Organizational Resource Development Dept.", date: "Feb 2025 - Dec 2025" },

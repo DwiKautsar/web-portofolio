@@ -132,8 +132,19 @@ export default function Home() {
 
           {/* Floating Badges */}
           <motion.div 
-            className="!absolute -top-4 -right-4 p-3 rounded-xl glass-panel bg-white/70 dark:bg-slate-800/80 border border-white/30 dark:border-white/20 shadow-xl backdrop-blur-md z-20"
-            animate={{ y: [0, -8, 0] }}
+            className="!absolute -top-4 -right-4 p-3 rounded-xl glass-panel bg-white/90 dark:bg-slate-800/80 border border-slate-200 dark:border-white/20 shadow-xl backdrop-blur-md z-20"
+          >
+            <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-2">
+              <Code2 size={24} />
+            </div>
+            <p className="font-bold text-sm text-[var(--text-main)]">Software<br/>Engineer</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
+            className="!absolute -bottom-4 -left-4 px-4 py-2.5 rounded-xl glass-panel bg-white/90 dark:bg-slate-800/80 border border-slate-200 dark:border-white/20 shadow-xl backdrop-blur-md z-20 flex items-center gap-2.5"  animate={{ y: [0, -8, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           >
             <Code2 className="text-blue-600 dark:text-cyan-400 w-6 h-6" />
@@ -223,13 +234,13 @@ export default function Home() {
             }
           ].map((exp, i) => (
             <motion.div key={i} variants={fadeUpVariants} className="glass-panel glass-panel-hoverable p-6 md:p-8 flex flex-col md:flex-row gap-6">
-              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-100 flex flex-shrink-0 items-center justify-center border border-white/50 dark:border-white/10 shadow-inner overflow-hidden p-2">
+              <div className="w-16 h-16 rounded-2xl bg-white dark:bg-slate-100 flex flex-shrink-0 items-center justify-center border border-slate-200 dark:border-white/10 shadow-inner overflow-hidden p-2">
                 <img src={exp.logo} alt={exp.org} className="w-full h-full object-contain" />
               </div>
               <div>
                 <h3 className="text-2xl font-bold">{exp.role}</h3>
                 <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">{exp.org}</p>
-                <p className="text-sm font-semibold text-[var(--text-muted)] mb-4 inline-block px-3 py-1 bg-white/40 dark:bg-slate-900/40 rounded-full">{exp.date}</p>
+                <p className="text-sm font-semibold text-[var(--text-muted)] mb-4 inline-block px-3 py-1 bg-slate-200/50 dark:bg-slate-900/40 rounded-full">{exp.date}</p>
                 <p className="text-[var(--text-muted)] leading-relaxed">{exp.desc}</p>
               </div>
             </motion.div>
@@ -336,14 +347,14 @@ export default function Home() {
           <div className="hidden md:flex flex-col gap-6">
             <div className="flex w-max animate-marquee-left">
               {[...desktopRow1, ...desktopRow1].map((skill, i) => (
-                <div key={`d1-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                <div key={`d1-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
             </div>
             <div className="flex w-max animate-marquee-right">
               {[...desktopRow2, ...desktopRow2].map((skill, i) => (
-                <div key={`d2-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                <div key={`d2-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
@@ -356,7 +367,7 @@ export default function Home() {
             {/* Row 1 - Moving Left */}
             <div className="flex w-[200%] animate-marquee-left">
               {[...mobileRow1, ...mobileRow1, ...mobileRow1].map((skill, i) => (
-                <div key={`m1-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                <div key={`m1-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
@@ -365,7 +376,7 @@ export default function Home() {
             {/* Row 2 - Moving Right */}
             <div className="flex w-[200%] animate-marquee-right">
               {[...mobileRow2, ...mobileRow2, ...mobileRow2].map((skill, i) => (
-                <div key={`m2-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                <div key={`m2-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
@@ -374,7 +385,7 @@ export default function Home() {
             {/* Row 3 - Moving Left */}
             <div className="flex w-[200%] animate-marquee-left">
               {[...mobileRow3, ...mobileRow3, ...mobileRow3].map((skill, i) => (
-                <div key={`m3-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-white/60 dark:border-white/10 bg-white/50 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
+                <div key={`m3-${i}`} className="flex-shrink-0 px-6 py-3 mx-3 rounded-2xl border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-slate-800/50 font-bold text-sm shadow-sm text-[var(--text-main)] backdrop-blur-md">
                   {skill}
                 </div>
               ))}
