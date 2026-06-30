@@ -130,9 +130,10 @@ export default function Home() {
              </div>
           </div>
 
-          {/* Floating Badges */}
           <motion.div 
             className="!absolute -top-4 -right-4 p-3 rounded-xl glass-panel bg-white/90 dark:bg-slate-800/80 border border-slate-200 dark:border-white/20 shadow-xl backdrop-blur-md z-20"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
           >
             <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 mb-2">
               <Code2 size={24} />
@@ -140,18 +141,8 @@ export default function Home() {
             <p className="font-bold text-sm text-[var(--text-main)]">Software<br/>Engineer</p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
-            className="!absolute -bottom-4 -left-4 px-4 py-2.5 rounded-xl glass-panel bg-white/90 dark:bg-slate-800/80 border border-slate-200 dark:border-white/20 shadow-xl backdrop-blur-md z-20 flex items-center gap-2.5"  animate={{ y: [0, -8, 0] }}
-            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-          >
-            <Code2 className="text-blue-600 dark:text-cyan-400 w-6 h-6" />
-          </motion.div>
-
           <motion.div 
-            className="!absolute -bottom-4 -left-4 px-4 py-2.5 rounded-xl glass-panel bg-white/70 dark:bg-slate-800/80 border border-white/30 dark:border-white/20 shadow-xl backdrop-blur-md z-20 flex items-center gap-2.5"
+            className="!absolute -bottom-4 -left-4 px-4 py-2.5 rounded-xl glass-panel bg-white/90 dark:bg-slate-800/80 border border-slate-200 dark:border-white/20 shadow-xl backdrop-blur-md z-20 flex items-center gap-2.5"
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
           >
@@ -159,7 +150,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-blue-500"></span>
             </div>
-            <span className="text-sm font-bold text-slate-800 dark:text-slate-200">Software Engineer</span>
+            <span className="text-sm font-bold text-[var(--text-main)]">Software Engineer</span>
           </motion.div>
 
         </motion.div>
