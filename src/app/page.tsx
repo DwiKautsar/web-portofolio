@@ -80,7 +80,7 @@ export default function Home() {
     <div className="space-y-24 pb-20">
       
       {/* Hero Section */}
-      <section id="hero" className="pt-28 pb-4 md:pt-0 md:pb-0 md:min-h-[75vh] flex flex-col-reverse md:flex-row items-center justify-start md:justify-between gap-8 md:gap-10">
+      <section id="hero" className="pt-2 pb-4 md:pt-0 md:pb-0 md:min-h-[75vh] flex flex-col-reverse md:flex-row items-center justify-start md:justify-between gap-8 md:gap-10">
         <motion.div 
           className="flex-1 space-y-6 text-center md:text-left"
           initial="hidden"
