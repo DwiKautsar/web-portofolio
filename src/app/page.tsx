@@ -80,7 +80,7 @@ export default function Home() {
     <div className="space-y-24 pb-20">
       
       {/* Hero Section */}
-      <section id="hero" className="min-h-[75vh] pt-12 md:pt-0 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-12 md:gap-10">
+      <section id="hero" className="pt-28 pb-4 md:pt-0 md:pb-0 md:min-h-[75vh] flex flex-col-reverse md:flex-row items-center justify-start md:justify-between gap-8 md:gap-10">
         <motion.div 
           className="flex-1 space-y-6 text-center md:text-left"
           initial="hidden"
@@ -106,7 +106,7 @@ export default function Home() {
         
         {/* Creative Glassmorphism Profile Photo */}
         <motion.div 
-          className="relative w-60 h-80 md:w-72 md:h-96 mx-auto md:mx-0 flex-shrink-0 mt-12 md:mt-0 group perspective-1000"
+          className="relative w-60 h-80 md:w-72 md:h-96 mx-auto md:mx-0 flex-shrink-0 group perspective-1000"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
